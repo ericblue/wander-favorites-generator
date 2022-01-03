@@ -1,0 +1,21 @@
+[
+   {
+      "isFolder" : true,
+      "title" : "MyFolder",
+      "timeStamp" : 164118545600000000,
+      "folderContents" : [
+         {
+            "isFolder" : false,
+            "title" : "New York City",
+            "panoid" : "CAoSLEFGMVFpcE13TlJpUEVXUUVYVjZHZE1UNVcwenBfTFhlNlEzcklVOXRfTTJ3",
+            "timeStamp" : 164118545600000000
+         },
+         {
+            "panoid" : "of5b09joAopCXaildu6DZw",
+            "title" : "35.671822206844446, 139.69669206926622",
+            "timeStamp" : 164118545599999000,
+            "isFolder" : false
+         }
+      ]
+   }
+]
