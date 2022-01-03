@@ -5,4 +5,4 @@
 log/*
 .idea
 *.iml
-app.conf
+conf/app.conf
