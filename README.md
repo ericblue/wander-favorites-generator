@@ -11,7 +11,7 @@ Note: A future update will allow importing of KML/KMZ/GPX (exported from a custo
 
 ## Getting Started
 
-A hosted version of this will be posted and shared shortly from my own personal website.
+A hosted version of this app is currently up for testing at http://app.eric-blue.com/wander/?src=github.
 For those wishing to install and run this app on your own, setup should be fairly minimal.
 
 * Requires Perl 5.x, Mojolicious (https://mojolicious.org/) and minimal dependencies (LWP, JSON, Log4Perl, etc)
@@ -95,6 +95,7 @@ complex fashion, check out the Wander VR utilities project (https://sourceforge.
 ## TODO
 
 * Add support for KML/KMZ and possibly GPX support to import places easily from Google Maps or other geo apps
+* Add spinner+progress indicator
 
 ## Author
 
