@@ -96,7 +96,7 @@ my $favorites_json = Wander::Favorites::generate_favorites({
     folder             => 'MyFolder'
 });
 
-my $filename = '/Users/ericblue/Downloads/Wander_Favorites.json';
+my $filename = '/tmp/Wander_Favorites.json';
 
 $logger->info("Saving favorites JSON to $filename\n");
 

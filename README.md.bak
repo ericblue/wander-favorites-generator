@@ -30,7 +30,7 @@ See: https://developers.google.com/maps/documentation/streetview/get-api-key
 ### Running the Web Server
 
 There's a command-line script and web server running Mojolicious (wander-favorites-server.pl).  Running this command
-will present you with all the usual mojo comand-line options.  Additionally there are helper scripts - 
+will present you with all the usual mojo command-line options.  Additionally there are helper scripts - 
 _run_dev.sh_ running on port 3000 for dev and _run.sh_ 30001 for production mode.
 
 ### Running from the CLI
