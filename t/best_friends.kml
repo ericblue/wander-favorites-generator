@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Untitled layer</name>
+    <Style id="icon-ci-1-normal">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>images/icon-1.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-ci-1-highlight">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>images/icon-1.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1.1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-ci-1">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-ci-1-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-ci-1-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-ci-2-normal">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>images/icon-2.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-ci-2-highlight">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>images/icon-2.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1.1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-ci-2">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-ci-2-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-ci-2-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-ci-3-normal">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>images/icon-3.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-ci-3-highlight">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>images/icon-3.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1.1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-ci-3">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-ci-3-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-ci-3-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-ci-4-normal">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>images/icon-4.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-ci-4-highlight">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>images/icon-4.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1.1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-ci-4">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-ci-4-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-ci-4-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-ci-5-normal">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>images/icon-5.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-ci-5-highlight">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>images/icon-5.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1.1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-ci-5">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-ci-5-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-ci-5-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-ci-6-normal">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>images/icon-6.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-ci-6-highlight">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>images/icon-6.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1.1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-ci-6">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-ci-6-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-ci-6-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-ci-7-normal">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>images/icon-7.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-ci-7-highlight">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>images/icon-7.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1.1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-ci-7">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-ci-7-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-ci-7-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Placemark>
+      <name>Sedona Springs Resort</name>
+      <description><![CDATA[120 Kallof Pl<br>Sedona, AZ 86336<br>(928) 204-3400]]></description>
+      <styleUrl>#icon-ci-1</styleUrl>
+      <Point>
+        <coordinates>
+          -111.793328,34.863347,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Grandview Resorts At Las Vegas</name>
+      <description><![CDATA[9940 Las Vegas Blvd S<br>Las Vegas, NV 89183<br>(702) 966-4700]]></description>
+      <styleUrl>#icon-ci-1</styleUrl>
+      <Point>
+        <coordinates>
+          -115.17246,36.009359,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Best Friends Animal</name>
+      <description><![CDATA[5100 Angel Canyon Rd<br>Kanab, UT 84741<br>(435) 644-2001]]></description>
+      <styleUrl>#icon-ci-2</styleUrl>
+      <Point>
+        <coordinates>
+          -112.52852,37.047298,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Rocking V Cafe</name>
+      <description><![CDATA[97 W Center St<br>Kanab, UT 84741<br>(435) 644-8001]]></description>
+      <styleUrl>#icon-ci-3</styleUrl>
+      <Point>
+        <coordinates>
+          -112.530725,37.047938,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Lotus of Siam</name>
+      <description><![CDATA[953 E Sahara Ave<br>Las Vegas, NV 89104<br>(702) 735-3033]]></description>
+      <styleUrl>#icon-ci-3</styleUrl>
+      <Point>
+        <coordinates>
+          -115.14223,36.143975,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>South Point Hotel, Casino and Spa</name>
+      <description><![CDATA[9777 Las Vegas Blvd South<br>Las Vegas, NV 89183<br>(702) 796-7111]]></description>
+      <styleUrl>#icon-ci-3</styleUrl>
+      <Point>
+        <coordinates>
+          -115.172767,36.013282,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Javelina Cantina</name>
+      <description><![CDATA[671 Highway 179<br>Sedona, AZ 86336<br>(928) 203-9514]]></description>
+      <styleUrl>#icon-ci-3</styleUrl>
+      <Point>
+        <coordinates>
+          -111.763714,34.858341,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Parry Lodge</name>
+      <description><![CDATA[89 E Center St<br>Kanab, UT 84741<br>(435) 644-2601]]></description>
+      <styleUrl>#icon-ci-1</styleUrl>
+      <Point>
+        <coordinates>
+          -112.528483,37.047839,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>El Tovar Hotel</name>
+      <description><![CDATA[Grand Canyon Village<br>Grand Canyon National Park South Rim, Grand Canyon, AZ 86023<br>(888) 297-2757]]></description>
+      <styleUrl>#icon-ci-1</styleUrl>
+      <Point>
+        <coordinates>
+          -112.138611,36.054444,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Cameron Trading Post</name>
+      <description><![CDATA[54 Miles North of Flagstaff on Hwy 89<br>Cameron, AZ 86020<br>(928) 679-2231]]></description>
+      <styleUrl>#icon-ci-4</styleUrl>
+      <Point>
+        <coordinates>
+          -111.411299,35.87821,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Pink Jeep Tours</name>
+      <description><![CDATA[Pink Jeep Tours<br>204 N AZ-89-ALT, Sedona, AZ]]></description>
+      <styleUrl>#icon-ci-5</styleUrl>
+      <Point>
+        <coordinates>
+          -111.76134,34.86869,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Airport Mesa Vortex</name>
+      <description>http://www.wildsedona.com/trails/airport.htm</description>
+      <styleUrl>#icon-ci-6</styleUrl>
+      <Point>
+        <coordinates>
+          -111.778507,34.857095,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Bell Rock Vortex</name>
+      <description>http://www.wildsedona.com/trails/bell.htm</description>
+      <styleUrl>#icon-ci-6</styleUrl>
+      <Point>
+        <coordinates>
+          -111.764517,34.7897,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>New Navajo Bridge</name>
+      <description>http://www.nps.gov/glca/historyculture/navajobridge.htm</description>
+      <styleUrl>#icon-ci-7</styleUrl>
+      <Point>
+        <coordinates>
+          -111.6315,36.8178,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Desert View Watchtower</name>
+      <description><![CDATA[Watchtower-Grand Canyon<br>AZ-64, Uninc Coconino County, AZ<br><br>http://www.scienceviews.com/parks/watchtower.html]]></description>
+      <styleUrl>#icon-ci-7</styleUrl>
+      <Point>
+        <coordinates>
+          -111.82736,36.04266,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>South Kaibab Trail</name>
+      <description><![CDATA[+36° 3' 10.44", -112° 4' 58.94"<br><br>http://www.bobspixels.com/kaibab.org/show_photo.php?photo=md_oct_05_2003_121836.jpg]]></description>
+      <styleUrl>#icon-ci-6</styleUrl>
+      <Point>
+        <coordinates>
+          -112.08304,36.0529,0
+        </coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>

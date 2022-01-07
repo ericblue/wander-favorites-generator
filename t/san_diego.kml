@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Untitled layer</name>
+    <Style id="icon-22-normal">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/22-blue-dot.png</href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-22-highlight">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/22-blue-dot.png</href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1.1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-22">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-22-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-22-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-22-nodesc-normal">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/22-blue-dot.png</href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-22-nodesc-highlight">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/22-blue-dot.png</href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1.1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-22-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-22-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-22-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Placemark>
+      <name>Hotel Del Coronado</name>
+      <styleUrl>#icon-22-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          -117.179923,32.681268,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Red Pearl Kitchen</name>
+      <styleUrl>#icon-22-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          -117.160666,32.7094,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Little Italy</name>
+      <description><![CDATA[<img src="https://lh3.googleusercontent.com/umsh/AFiHsUEFyFMxlvMevYhcDSwiNcMl_xOXIWI0rO8ikzDa4oVzmfNE91eRo8MqxR_mvUkVneEdW4-xQOuVsXp6kyP1Ph4DXuv_q7v3lAq4tRX0vBkyjDjYd0nZVHHnD2pfNbuaZVd3SOZaySNDWMcaNj5_LtLgVw6ESxMdg-o" height="200" width="auto" /><br><br>San Diego, CA]]></description>
+      <styleUrl>#icon-22</styleUrl>
+      <ExtendedData>
+        <Data name="gx_media_links">
+          <value>https://lh3.googleusercontent.com/umsh/AFiHsUEFyFMxlvMevYhcDSwiNcMl_xOXIWI0rO8ikzDa4oVzmfNE91eRo8MqxR_mvUkVneEdW4-xQOuVsXp6kyP1Ph4DXuv_q7v3lAq4tRX0vBkyjDjYd0nZVHHnD2pfNbuaZVd3SOZaySNDWMcaNj5_LtLgVw6ESxMdg-o</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -117.168385,32.72415,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Buon Appetito</name>
+      <styleUrl>#icon-22-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          -117.168286,32.722308,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Old Town San Diego State Historic Park</name>
+      <description><![CDATA[<img src="https://lh3.googleusercontent.com/umsh/AFiHsUHGX_pu8PD5PqvA9awx_9p7yU-HfjOqhNMZPNwfTaTMnGd_iH4PwIjfp_EFGmvLbaGslymq9rIkeiF9sUkSYxXtxMcRHHa4z1FylnOdBqNyl5f62RDEjT0y2K0kkfXGDrjY2tES9MdxwtlFxS9cQnXdbmRq4sa5LA" height="200" width="auto" /><br><br>]]></description>
+      <styleUrl>#icon-22</styleUrl>
+      <ExtendedData>
+        <Data name="gx_media_links">
+          <value>https://lh3.googleusercontent.com/umsh/AFiHsUHGX_pu8PD5PqvA9awx_9p7yU-HfjOqhNMZPNwfTaTMnGd_iH4PwIjfp_EFGmvLbaGslymq9rIkeiF9sUkSYxXtxMcRHHa4z1FylnOdBqNyl5f62RDEjT0y2K0kkfXGDrjY2tES9MdxwtlFxS9cQnXdbmRq4sa5LA</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -117.197339,32.754658,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Balboa Park</name>
+      <description><![CDATA[<img src="https://lh3.googleusercontent.com/umsh/AFiHsUHLKqFyzy01y0ayqMckQCL0NLP27Iv1rZsvDnk5AxTERS7aoy0bB1U_rEykZmPb2HdT7PiPQMK0NjiOkRFYmvc5k_VkndnI7YTqj95_9mtu5RnYi3AOO4szsrhA1DcM4gjX3_bWb3rapiJw-vV69ZMc6Tgm20StsOg" height="200" width="auto" /><br><br>San Diego, CA]]></description>
+      <styleUrl>#icon-22</styleUrl>
+      <ExtendedData>
+        <Data name="gx_media_links">
+          <value>https://lh3.googleusercontent.com/umsh/AFiHsUHLKqFyzy01y0ayqMckQCL0NLP27Iv1rZsvDnk5AxTERS7aoy0bB1U_rEykZmPb2HdT7PiPQMK0NjiOkRFYmvc5k_VkndnI7YTqj95_9mtu5RnYi3AOO4szsrhA1DcM4gjX3_bWb3rapiJw-vV69ZMc6Tgm20StsOg</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -117.144123,32.734382,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name><![CDATA[Peohe's Coronado Waterfront]]></name>
+      <styleUrl>#icon-22-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          -117.169114,32.69836,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Seaport Village</name>
+      <styleUrl>#icon-22-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          -117.170079,32.709173,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Seaport Village</name>
+      <styleUrl>#icon-22-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          -117.170079,32.709173,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name><![CDATA[San Diego Marriott Hotel & Mari]]></name>
+      <styleUrl>#icon-22-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          -117.165271,32.708408,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name><![CDATA[San Diego Marriott Hotel & Mari]]></name>
+      <styleUrl>#icon-22-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          -117.165271,32.708408,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Horton Plaza</name>
+      <description><![CDATA[<img src="https://lh3.googleusercontent.com/umsh/AFiHsUH9z0-YOxBsm-4Rk5iNgQ8PgCb_5khMYEvcvYEwYkoAizxkEqXLZzauo8hHaAYcotgZN-zDBU3tu7zBnWvgPNZ-t4CHP8kBCxeRbC2YY8kelhMZkbkIbrDMMW2eePKMKO80ooy6QiXDASUFEX5pOfDluMr6YoHJag" height="200" width="auto" /><br><br>San Diego, CA]]></description>
+      <styleUrl>#icon-22</styleUrl>
+      <ExtendedData>
+        <Data name="gx_media_links">
+          <value>https://lh3.googleusercontent.com/umsh/AFiHsUH9z0-YOxBsm-4Rk5iNgQ8PgCb_5khMYEvcvYEwYkoAizxkEqXLZzauo8hHaAYcotgZN-zDBU3tu7zBnWvgPNZ-t4CHP8kBCxeRbC2YY8kelhMZkbkIbrDMMW2eePKMKO80ooy6QiXDASUFEX5pOfDluMr6YoHJag</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -117.163974,32.713423,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Hilton San Diego Bayfront</name>
+      <styleUrl>#icon-22-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          -117.158288,32.703325,0
+        </coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>

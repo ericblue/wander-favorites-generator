@@ -1,193 +1,185 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Wander Favorites Generator"><meta name="author" content="Eric Blue - https://eric-blue.com"><title>Wander Favorites Generator</title>
-<!-- See: https://getbootstrap.com/docs/5.0/getting-started/introduction/ -->
-<!-- Bootstrap core CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-	<style>
-         .bd-placeholder-img {
-         font-size: 1.125rem;
-         text-anchor: middle;
-         -webkit-user-select: none;
-         -moz-user-select: none;
-         user-select: none;
-         }
-         @media (min-width: 768px) {
-         .bd-placeholder-img-lg {
-         font-size: 3.5rem;
-         }
-         }
-      </style>
-</head>
-<body>
-	<main>
-		<div class="container py-4">
-			<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-				<a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-					<svg class="bi me-2" width="40" height="32">
-						<use xlink:href="#bootstrap"/>
-					</svg>
-					<span class="fs-4">Wander Favorites Generator</span>
-				</a>
-				<ul class="nav nav-pills">
-					<li class="nav-item">
-						<a href="#" class="nav-link active" aria-current="page">Home</a>
-					</li>
-					<li class="nav-item">
-						<a href="#get-started" class="nav-link">Get Started</a>
-					</li>
-					<li class="nav-item">
-						<a href="#other-links" class="nav-link">Links</a>
-					</li>
-					<li class="nav-item">
-						<a href="https://github.com/ericblue/wander-favorites-generator" class="nav-link">Github Project</a>
-					</li>
-					<li class="nav-item">
-						<a href="http://eric-blue.com/" class="nav-link">Contact</a>
-					</li>
-				</ul>
-			</header>
-			<div class="p-5 mb-4 bg-light rounded-3">
-				<div class="container-fluid py-5">
-					<h1 class="display-5 fw-bold">Wander Favorites Generator</h1>
-
-
-					<p class="col-md-8 fs-4">
-					The <a target="newwin" href="https://www.oculus.com/experiences/quest/2078376005587859/">Wander</a> app for the Oculus Quest is an *amazing*
-					virtual reality app that lets you (virtually) travel all over the world and immerse yourself with imagery from Google StreetView.  The Wander
-					App does allow you to save favorites/bookmarks of locations.  And you have the ability to upload these favorite files to your headset with a USB cable
-					and the Android File Transfer utility.
-
-                    <br/><br/>
-
-                    <img src="img/wander-favorites-header-small.png" />
-
-                    <br/><br/>
-
-					However, there is currently no way to easily create favorites outside of VR or to import places to visit in bulk given a simple set of geo coordinates.
-					The goal with this app is to make it easy to plan your virtual trips in advance of putting the headset on, and to make the process quick and easy.
-
-					<br/><br/>
-
-					Simply <a href="#get-started">Get Started</a> by entering your locations by name or latitude/longitude, and this tool will use Google StreetView APIs to lookup the corresponding
-					panoid for each location, and generate a properly formatted Wander_Favorites.json file.
-
-					 </p>
-
-
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Wander Favorites Generator">
+        <meta name="author" content="Eric Blue - https://eric-blue.com">
+        <title>Wander Favorites Generator</title>
+        <!-- See: https://getbootstrap.com/docs/5.0/getting-started/introduction/ -->
+        <!-- Bootstrap core CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <style>
+            .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+            }
+            @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+            }
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <div class="container py-4">
+            <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32">
+                        <use xlink:href="#bootstrap"/>
+                    </svg>
+                    <span class="fs-4">Wander Favorites Generator</span>
+                </a>
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active" aria-current="page">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#get-started" class="nav-link">Get Started</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#other-links" class="nav-link">Links</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://github.com/ericblue/wander-favorites-generator" class="nav-link">Github Project</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="http://eric-blue.com/" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </header>
+            <div class="p-5 mb-4 bg-light rounded-3">
+                <div class="container-fluid py-5">
+                    <h1 class="display-5 fw-bold">Wander Favorites Generator</h1>
                     <p class="col-md-8 fs-4">
-                    <b>Note: </b> A future update will allow importing of KML/KMZ/GPX (exported from a custom Google Map)
+                        The <a target="newwin" href="https://www.oculus.com/experiences/quest/2078376005587859/">Wander</a> app for the Oculus Quest is an *amazing*
+                        virtual reality app that lets you (virtually) travel all over the world and immerse yourself with imagery from Google StreetView.  The Wander
+                        App does allow you to save favorites/bookmarks of locations.  And you have the ability to upload these favorite files to your headset with a USB cable
+                        and the Android File Transfer utility.
+                        <br/><br/>
+                        <img src="img/wander-favorites-header-small.png" />
+                        <br/><br/>
+                        However, there is currently no way to easily create favorites outside of VR or to import places to visit in bulk given a simple set of geo coordinates.
+                        The goal with this app is to make it easy to plan your virtual trips in advance of putting the headset on, and to make the process quick and easy.
+                        <br/><br/>
+                        Simply <a href="#get-started">Get Started</a> by entering your locations by name or latitude/longitude, and this tool will use Google StreetView APIs to lookup the corresponding
+                        panoid for each location, and generate a properly formatted Wander_Favorites.json file.
                     </p>
-
-
-	                <!--
-					<button class="btn btn-primary btn-lg" type="button">Example button</button>
-					-->
-				</div>
-			</div>
-			<div class="row align-items-md-stretch">
-				<div class="col-md-6">
-					<div id="get-started" class="h-100 p-5 bg-light border rounded-3">
-						<h2>Enter Your Locations</h2>
-
-						<p>
-						Simply enter a list of locations on item at a time in the text area below.  You can enter geo coordinates (latitude, longitude) or addresses or text names (e.g. <i>New York City</i>).
-						This app will use the Google StreetView API to lookup these values and convert to the panoid values (e.g. <i>of5b09joAopCXaildu6DZw</i>) used by the Wander app.
-						</p>
-
-						<p>
-						Alternatively, a title can be added for the location by adding a value, delimited by pipe (e.g. <i>New York City|My Trip to New York</i>)
-						</p>
-
-						<p>
-						Generated Favorites will be grouped into a single folder (<i>Folder Name</i>)
-						</p>
-
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="h-100 p-5 bg-light border rounded-3">
-						<h2>View / Download Favorites</h2>
-						<p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.</p>
-						<p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.</p>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="h-100 p-5 bg-light border rounded-3">
-					<form>
-					<div class="form-group">
-                        <label for="folderTextInput"><b>Folder Name</b></label>
-                        <input type="text" class="form-control" id="folder" placeholder="MyFolderName">
-                      </div>
-						<div class="form-group">
-							<label for="locationsTextArea"><b>Locations</b></label>
-							<textarea class="form-control rounded-0" id="locations" rows="15"></textarea>
-						</div>
-						</form>
-						<p></p>
-						<button id="generate-favorites" class="btn btn btn-primary" type="button">Generate Favorites</button>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="h-100 p-5 bg-light border rounded-3">
+                    <p class="col-md-8 fs-4">
+                        <b>Note: </b> A future update will allow importing of KML/KMZ/GPX (exported from a custom Google Map)
+                    </p>
+                    <!--
+                        <button class="btn btn-primary btn-lg" type="button">Example button</button>
+                        -->
+                </div>
+            </div>
+            <div class="row align-items-md-stretch">
+                <div class="col-md-6">
+                    <div id="get-started" class="h-100 p-5 bg-light border rounded-3">
+                        <h2>Enter Your Locations</h2>
+                        <p>
+                            Simply enter a list of locations on item at a time in the text area below.  You can enter geo coordinates (latitude, longitude) or addresses or text names (e.g. <i>New York City</i>).
+                            This app will use the Google StreetView API to lookup these values and convert to the panoid values (e.g. <i>of5b09joAopCXaildu6DZw</i>) used by the Wander app.
+                        </p>
+                        <p>
+                            Alternatively, a title can be added for the location by adding a value, delimited by pipe (e.g. <i>New York City|My Trip to New York</i>)
+                        </p>
+                        <p>
+                            Generated Favorites will be grouped into a single folder (<i>Folder Name</i>)
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="h-100 p-5 bg-light border rounded-3">
+                        <h2>View / Download Favorites</h2>
+                        <p>Copy the Wander_Favorites.json output to your clipboard, or download a copy to your computer.</p>
+                        <p>
+                            Before overwriting your existing Wander_Favorites.json file on your Oculus headset, make sure to save a
+                            backup copy first.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="h-100 p-5 bg-light border rounded-3">
                         <form>
-						<div class="form-group">
-							<label for="favoritesTextArea"><b>Favorites Output</b></label>
-							<textarea class="form-control rounded-0" id="favorites" rows="15"></textarea>
-						</div>
-						</form>
-						<p></p>
-						<button id="copy-clipboard" class="btn btn-outline-secondary" type="button">Copy to Clipboard</button>
-						<button id="download-favorites" class="btn btn-outline-secondary" type="button">Download Favorites</button>
-					</div>
-				</div>
-			</div>
 
-			<div class="p-5 mb-4 bg-light rounded-3">
-				<div class="container-fluid py-5">
-					<h2 id="other-links" class="display-5 fw-bold">Other Links</h2>
+                            <div class="form-group">
+                                <label for="folderTextInput"><b>Folder Name</b></label>
+                                <input type="text" class="form-control" id="folder" placeholder="MyFolderName">
+                                <p></p>
+                            </div>
 
+                            <div class="form-group">
+                                <label for="exampleFormControlFile1"><b>Import KML file</b></label>
+                                <br>
+                                <form enctype="multipart/form-data">
+                                <input id="file" type="file" accept=".kml" class="form-control-file" >
+                                <button id="import-kml" class="btn btn-sm btn-secondary" type="button">Import</button>
+                                </form>
+                                 <p></p>
+                            </div>
 
-					<p class="col-md-8 fs-4">
-					<b>Wander VR Utilities</b>
+                            <div class="form-group">
+                                <label for="locationsTextArea"><b>Locations</b></label>
+                                <textarea class="form-control rounded-0" id="locations" rows="15"></textarea>
 
-					 - A python-based editor/GUI for helping edit and organize bookmarks for Wander -
-					 <a target="newwin" href="https://sourceforge.net/projects/wander-vr-utilities/files/editor/">https://sourceforge.net/projects/wander-vr-utilities/files/editor/</a>
-
-                    <br/><br/>
-
-                    <b>Source Code for this App</b>
-
-					 - Github hosted code for this app built on Perl (Mojolicious), Bootstrap 5 and JQuery -
-					 <a target="newwin" href="https://github.com/ericblue/wander-favorites-generator">https://github.com/ericblue/wander-favorites-generator</a>
-
-                    <br/><br/>
-
-					</p>
-
-				</div>
-
-			<footer class="pt-3 mt-4 text-muted border-top">
-               &copy; 2022
-				<a href="https://eric-blue.com">Eric Blue</a>
-			</footer>
-		</div>
-	</main>
-	<script
-         src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-         crossorigin="anonymous"></script>
-	<script
-         src="https://code.jquery.com/jquery-3.6.0.min.js"
-         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-         crossorigin="anonymous"></script>
-
-    <!-- https://sweetalert2.github.io/ -->
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-
-	<! -- Load App -->
-	<script src="js/loglevel.min.js"></script>
-	<script src="js/common.js"></script>
-	<script src="js/app.js"></script>
-
-</body>
+                            </div>
+                        </form>
+                        <p></p>
+                        <button id="generate-favorites" class="btn btn btn-primary" type="button">Generate Favorites</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="h-100 p-5 bg-light border rounded-3">
+                        <form>
+                            <div class="form-group">
+                                <label for="favoritesTextArea"><b>Favorites Output</b></label>
+                                <textarea class="form-control rounded-0" id="favorites" rows="15"></textarea>
+                            </div>
+                        </form>
+                        <p></p>
+                        <button id="copy-clipboard" class="btn btn-outline-secondary" type="button">Copy to Clipboard</button>
+                        <button id="download-favorites" class="btn btn-outline-secondary" type="button">Download Favorites</button>
+                    </div>
+                </div>
+            </div>
+            <div class="p-5 mb-4 bg-light rounded-3">
+                <div class="container-fluid py-5">
+                    <h2 id="other-links" class="display-5 fw-bold">Other Links</h2>
+                    <p class="col-md-8 fs-4">
+                        <b>Wander VR Utilities</b>
+                        - A python-based editor/GUI for helping edit and organize bookmarks for Wander -
+                        <a target="newwin" href="https://sourceforge.net/projects/wander-vr-utilities/files/editor/">https://sourceforge.net/projects/wander-vr-utilities/files/editor/</a>
+                        <br/><br/>
+                        <b>Source Code for this App</b>
+                        - Github hosted code for this app built on Perl (Mojolicious), Bootstrap 5 and JQuery -
+                        <a target="newwin" href="https://github.com/ericblue/wander-favorites-generator">https://github.com/ericblue/wander-favorites-generator</a>
+                        <br/><br/>
+                    </p>
+                </div>
+                <footer class="pt-3 mt-4 text-muted border-top">
+                    &copy; 2022
+                    <a href="https://eric-blue.com">Eric Blue</a>
+                </footer>
+            </div>
+        </main>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
+        <!-- https://sweetalert2.github.io/ -->
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <! -- Load App -->
+        <script src="js/loglevel.min.js"></script>
+        <script src="js/common.js"></script>
+        <script src="js/app.js"></script>
+    </body>
 </html>

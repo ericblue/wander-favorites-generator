@@ -14,6 +14,7 @@ use Mojo::UserAgent;
 use ConfigUtil;
 use Google::StreetView;
 use Wander::Favorites;
+use Wander::KMLImporter;
 
 use strict;
 use vars qw($logger $gsv);
@@ -48,7 +49,77 @@ helper real_ip => sub {
 
 };
 
+# Upload KML
+
 # Handle generate favorties
+
+post '/import-kml' => sub {
+
+    my $c = shift;
+
+    # File saved as a Mojo::Upload type
+    # See: https://docs.mojolicious.org/Mojo/Upload
+    my $kml = $c->param('file');
+
+    #print Dumper $file;
+
+    my $original_kml_filename = $kml->filename;
+    my $original_kml_size = $kml->size;
+
+    $logger->debug("kml = $original_kml_filename, size = $original_kml_size bytes\n");
+
+    my $kml_data = $kml->slurp;
+
+    eval {
+
+        if ($kml_data !~ "<kml") {
+            die "KML file not detected!  Missing &lt;kml&gt; element.\n";
+        }
+
+        my @locations = Wander::KMLImporter::convert_kml_data_to_locations($kml_data);
+
+        my $total_locations = $#locations + 1;
+
+        if ($total_locations >= 1) {
+
+            my $success_response = {
+                'status'          => "SUCCESS",
+                'total_locations' => $total_locations,
+                'locations'       => \@locations
+            };
+
+            $c->render(json => $success_response);
+        } else {
+
+            my $failure_response = {
+                'status'          => "FAILURE",
+                'error_message' => 'No locations detected in KML file!'
+            };
+
+            $c->render(json => $failure_response);
+
+        }
+
+    };
+
+    if ($@) {
+
+        # Unknown error; this should can't any fatals errors/dies
+        # However, note that Twig is failing safely and internal errors are detected implicitly with 0 locations
+
+        my $failure_response = {
+            'status'          => "FAILURE",
+            'error_message' => $@
+        };
+
+        $c->render(json => $failure_response);
+
+    }
+
+
+};
+
+# Handle generate favorites
 
 post '/generate-favorites' => sub {
 
@@ -89,16 +160,16 @@ post '/generate-favorites' => sub {
         };
 
         if ($@) {
-            warn "Error converting location to panoid, reason =  $@";
+            $logger->warn("Error converting location to panoid, reason =  $@");
         } else {
 
             if (!defined $pano_id)  {
-                warn "No pano_id found, skipping...";
+                $logger->warn("No pano_id found, skipping...");
                 $total_errors++;
                 next;
             } else {
 
-                print "Found pano = $pano_id\n";
+                $logger->debug("Found pano = $pano_id\n");
                 $l->{'pano_id'} = $pano_id;
 
                 push(@favorite_locations, $l);

@@ -21,6 +21,7 @@ For those wishing to install and run this app on your own, setup should be fairl
       * cpanm install Log::Log4perl
       * cpanm install JSON
       * cpanm install LWP::UserAgent
+      * cpanm install XML::Twig
       * apt-get install liblwp-protocol-https-perl
       
 

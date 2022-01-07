@@ -66,6 +66,27 @@
             }
         },
 
+        App.prototype.addLocationsToInput = function(locations) {
+
+
+            // Create location list for textarea in the format of
+            // latitude, longitude | location title
+            // for processed kml  file
+
+            var locationInputData = '';
+
+            locations.forEach((location) => {
+                console.log(location);
+                var entry = location.latitude + ',' + location.longitude;
+                entry += '|' + location.name;
+
+                locationInputData += entry + '\n';
+            });
+
+            $('#locations').val(locationInputData);
+
+        },
+
         App.prototype.init = function() {
 
             log.enableAll();
@@ -92,6 +113,89 @@
             $('#folder').val('MyFolderName');
 
             // Register buttons
+
+            $('#import-kml').click(function() {
+
+                // var formData = new FormData();
+                // formData.append('file', $('#file')[0].files[0]);
+
+                var fd = new FormData();
+                var files = $('#file')[0].files;
+
+                // Check file selected or not
+                if(files.length > 0 ) {
+                    fd.append('file', files[0]);
+
+                    var results = $.ajax({
+                        type: "POST",
+                        url: "import-kml",
+                        data: fd,
+                        contentType: false,
+                        processData: false
+                    });
+
+                    results.done(function(data) {
+
+
+                        if (data.status == 'SUCCESS') {
+                            log.info('Finished uploading KML, response = ' + JSON.stringify(data));
+
+                            var successMessage = 'Imported a total of ' + data.total_locations + ' locations.  ';
+                            successMessage += 'Click <i>Generate Favorites</i> to convert these locations to favorites.';
+
+                            Swal.fire(
+                                'Success',
+                                successMessage,
+                                'success'
+                            );
+
+                            $.App.addLocationsToInput(data.locations);
+
+
+                        }  else if (data.status == 'FAILURE') {
+
+                            Swal.fire(
+                                'Error',
+                                'Reason = ' + data.error_message,
+                                'error'
+                            );
+
+                        } else {
+
+                            Swal.fire(
+                                'Error',
+                                'An unknown error has occurred!  Return status != SUCCESS.',
+                                'error'
+                            );
+
+                        }
+
+                    });
+
+                    results.fail(function(xhr, status, error) {
+                        var reason = processJsonFailure(xhr);
+                        log.error('Unable to import kml. Reason = ' + reason);
+                        Swal.fire(
+                            'Error',
+                            'Unable to import kml. Reason = ' + reason,
+                            'error'
+                        )
+                    });
+
+                } else {
+
+                    // No files selected
+
+                    Swal.fire(
+                        'No files uploaded',
+                        'You must select a file to upload.',
+                        'warning'
+                    )
+                }
+
+                // end click import-kml
+
+            });
 
             $('#generate-favorites').click(function() {
 
