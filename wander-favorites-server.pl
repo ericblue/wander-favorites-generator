@@ -17,7 +17,7 @@ use Wander::Favorites;
 use Wander::KMLImporter;
 
 use strict;
-use vars qw($logger $gsv);
+use vars qw($logger $gsv $polling_id %import_jobs);
 
 
 ## Mojolicious Controllers + REST endpoints
@@ -49,9 +49,74 @@ helper real_ip => sub {
 
 };
 
-# Upload KML
+# Websocket
 
-# Handle generate favorties
+websocket '/ws/import_status' => sub {
+    my $c = shift;
+
+    my $import_id = $c->param('import_id');
+    $logger->debug("Opened socket for import id = " . $import_id);
+
+    # Increase inactivity timeout for connection
+    $c->inactivity_timeout(300);
+
+    $c->on(json => sub {
+        my ($c, $hash) = @_;
+        #$hash->{msg} = "echo: $hash->{msg}";
+
+        # TODO - progress bar was working with the test endpoint with forced sleep
+        # The actual generate-favorites process is generally so quick the success dialogue shows before progress status
+        # This needs tested in more detail
+
+        $logger->debug("Got import status for $import_id, sending back " . Dumper(%import_jobs));
+        $c->send({json => \%import_jobs});
+    });
+};
+
+post '/test-import-progress' => sub {
+
+    my $c = shift;
+
+    my $folder = $c->param('folder');
+    my $import_id = $c->param('import_id');
+
+    $import_jobs{$import_id} = {
+      total_locations => 2,
+      current_location => 1
+    };
+
+    $| = 1;
+
+    print "f = $folder, i = $import_id\n";
+
+    my $max_polls = 10;
+
+    my $polls = 1;
+
+    $polling_id = Mojo::IOLoop->recurring(5 => sub ($ioloop) {
+
+        $logger->debug("ok, polling_id = $polling_id");
+
+        if ($polls >= $max_polls) {
+
+            Mojo::IOLoop->remove($polling_id);
+
+        } else {
+
+            $import_jobs{$import_id}{'current_location'} = $polls;
+
+            $logger->info("ok $polls  " . $polling_id );
+            $polls++;
+
+        }
+
+
+    })
+
+};
+
+
+# Upload KML
 
 post '/import-kml' => sub {
 
@@ -119,6 +184,7 @@ post '/import-kml' => sub {
 
 };
 
+
 # Handle generate favorites
 
 post '/generate-favorites' => sub {
@@ -126,6 +192,7 @@ post '/generate-favorites' => sub {
     my $c = shift;
 
     my $folder = $c->param('folder');
+    my $import_id = $c->param('import_id');
     my $locations_param = $c->req->body;
 
 
@@ -136,6 +203,13 @@ post '/generate-favorites' => sub {
     my @favorite_locations = ();
 
     my $total_errors = 0;
+
+    $import_jobs{$import_id} = {
+        total_locations  => $#locations + 1,
+        current_location => 1
+    };
+
+    $logger->debug("Initial import job status = " . Dumper(%import_jobs));
 
     foreach my $line (@locations) {
 
@@ -157,6 +231,7 @@ post '/generate-favorites' => sub {
 
         eval {
             $pano_id = $gsv->convertLocationToPanoId($l);
+            $import_jobs{$import_id}{'current_location'}++;
         };
 
         if ($@) {
@@ -173,11 +248,15 @@ post '/generate-favorites' => sub {
                 $l->{'pano_id'} = $pano_id;
 
                 push(@favorite_locations, $l);
+
+
             }
         }
 
 
     }
+
+    delete $import_jobs{$import_id};
 
     if (length($folder) < 1) {
         $folder = "myFolder";
@@ -187,6 +266,7 @@ post '/generate-favorites' => sub {
         favorite_locations => \@favorite_locations,
         folder             => $folder
     });
+
 
     my $success_response = {
         'status'            => "SUCCESS",
@@ -214,7 +294,7 @@ get '/' => sub {
 $Data::Dumper::Terse = 1;
 
 # Initialize logger; you can override
-Log::Log4perl->easy_init($INFO);
+Log::Log4perl->easy_init($DEBUG);
 $logger = get_logger();
 
 
@@ -230,9 +310,13 @@ my $config = ConfigUtil::load_config($config_file);
 
 our $gsv = Google::StreetView->new(
     api_key => $config->{'google_streetview_api_key'},
-    logger  => $main::logger,
+    logger  => $logger,
     debug   => 0
 );
 
+# Needed for storage of session+cookie values
+app->secrets(['#d-g_&KZ4T8jU4b$']);
+app->sessions->cookie_name('wander');
+#app->sessions->cookie_domain('localhost');
 
 app->start;

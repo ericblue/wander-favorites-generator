@@ -1,5 +1,6 @@
-X KML import
-- Logfile location for log4perl
-- Add favicon
 - Progress  spinner (websockets?) and cancel button
+- Logfile location for log4perl
+- Caching for coords/panoids
 - Endpoint to get/set api key
+- Setup nginx/docker for local https testing - https://hackerrdave.com/https-local-docker-nginx/
+- Create docker images

@@ -9,20 +9,12 @@
         <!-- See: https://getbootstrap.com/docs/5.0/getting-started/introduction/ -->
         <!-- Bootstrap core CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <style>
-            .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-            }
-            @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-            font-size: 3.5rem;
-            }
-            }
-        </style>
+        <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/img/favicon/site.webmanifest">
+        <link rel="stylesheet" href="css/app.css">
+
     </head>
     <body>
         <main>
@@ -69,12 +61,8 @@
                         Simply <a href="#get-started">Get Started</a> by entering your locations by name or latitude/longitude, and this tool will use Google StreetView APIs to lookup the corresponding
                         panoid for each location, and generate a properly formatted Wander_Favorites.json file.
                     </p>
-                    <p class="col-md-8 fs-4">
-                        <b>Note: </b> A future update will allow importing of KML/KMZ/GPX (exported from a custom Google Map)
-                    </p>
-                    <!--
-                        <button class="btn btn-primary btn-lg" type="button">Example button</button>
-                        -->
+
+
                 </div>
             </div>
             <div class="row align-items-md-stretch">
@@ -90,6 +78,12 @@
                         </p>
                         <p>
                             Generated Favorites will be grouped into a single folder (<i>Folder Name</i>)
+                        </p>
+                        <p>
+
+                        <b>KML</b> files can be imported from Google Maps (Your Places -> Saved -> Maps ) and opening in Google Maps.
+                        Upon clicking the three dots to the right of the title you can export to KML/KMZ (make sure to check 'Export as XML instead of KMZ'.  KML files can also
+                        be imported from Google Earth and other applications that contain PlaceMark data.
                         </p>
                     </div>
                 </div>
